@@ -3,64 +3,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stroburry AI</title>
+  <title>Stroburry IA 🍓</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
 </head>
-
 <body>
+
   <div class="app">
 
     <!-- SIDEBAR -->
-    <aside class="sidebar">
-      <div class="sidebar-header">
-        <div class="logo">
-          <div class="logo-icon">🍓</div>
-          <div class="logo-text">
-            <div class="logo-title">Stroburry AI</div>
-            <div class="logo-sub">Research Assistant</div>
-          </div>
-        </div>
+    <div class="sidebar">
+      <h2 class="logo">🍓 Stroburry IA</h2>
 
-        <input id="topicSearch" class="search" type="text" placeholder="Search topics..." />
-      </div>
+      <input type="text" id="topicSearch" placeholder="Search topics..." />
 
       <div id="topicsList" class="topics"></div>
 
-      <div class="sidebar-footer">
-        <button id="darkModeBtn" class="btn">🌙 Dark</button>
-        <button id="clearBtn" class="btn">🧹 Clear</button>
-        <button id="downloadBtn" class="btn">⬇️ Download</button>
+      <div class="language-box">
+        <h3>🌐 Language</h3>
+        <select id="languageSelect">
+          <option value="en">English (Default)</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="ko">한국어</option>
+          <option value="de">Deutsch</option>
+        </select>
       </div>
-    </aside>
+
+      <div class="admin-box">
+        <h3>🔒 Admin</h3>
+        <input type="password" id="adminCodeInput" placeholder="Enter admin code..." />
+        <button id="adminBtn">Activate Admin</button>
+
+        <div id="adminPanel" style="display:none;">
+          <p id="adminStatus">✅ Admin Mode Enabled</p>
+          <button id="viewMemoryBtn">📂 View Memory</button>
+          <button id="clearMemoryBtn">🗑️ Clear Memory</button>
+          <button id="exportMemoryBtn">⬇️ Export Memory</button>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button id="darkModeBtn">🌙 Dark Mode</button>
+        <button id="clearBtn">🧹 Clear Chat</button>
+        <button id="downloadBtn">⬇️ Download Chat</button>
+      </div>
+
+      <div class="footer">
+        <p>🍓 Stroburry IA (Offline)</p>
+        <p style="font-size:11px; opacity:0.6;">No API required</p>
+      </div>
+    </div>
 
     <!-- CHAT -->
-    <main class="chat">
-      <header class="chat-header">
-        <div class="chat-title" id="chatTitle">General Chat 🍓</div>
-
-        <div class="language-box">
-          <select id="languageSelect">
-            <option value="en">🇺🇸 English</option>
-            <option value="es">🇪🇸 Español</option>
-            <option value="fr">🇫🇷 Français</option>
-            <option value="ko">🇰🇷 한국어</option>
-          </select>
-        </div>
-      </header>
+    <div class="chat-area">
+      <div class="chat-header">
+        <h2 id="chatTitle">General Chat 🍓</h2>
+      </div>
 
       <div id="chatBox" class="chat-box"></div>
 
-      <div id="typingIndicator" class="typing">
-        <span></span><span></span><span></span>
+      <div id="typingIndicator" class="typing" style="display:none;">
+        🍓 Stroburry is thinking...
       </div>
 
-      <footer class="chat-input">
-        <input id="userInput" type="text" placeholder="Ask Stroburry..." autocomplete="off" />
+      <div class="input-area">
+        <input type="text" id="userInput" placeholder="Type your message..." />
         <button id="sendBtn">Send</button>
-      </footer>
-    </main>
+      </div>
+    </div>
 
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
